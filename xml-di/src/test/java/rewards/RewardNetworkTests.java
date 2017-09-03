@@ -7,11 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.AbstractApplicationContext;
 
 import common.money.MonetaryAmount;
-import config.RewardsConfig;
 
 /**
  * A system test that verifies the components of the RewardNetwork application work together to reward for dining
