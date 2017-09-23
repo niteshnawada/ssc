@@ -20,16 +20,20 @@ import common.money.Percentage;
  * Restaurants calculate how much benefit may be awarded to an account for
  * dining based on a availability policy and a benefit percentage.
  */
-// TODO-03:  Map this class using JPA Annotations.  See schema.sql file
-// for guidance on table and column names.
+@Entity
+@Table(name="T_RESTAURANT")
 public class Restaurant {
 
+	@Id
+	@Column(name="ID")
 	private Long entityId;
 
+	@Column(name="MERCHANT_NUMBER")
 	private String number;
 
 	private String name;
 
+	@AttributeOverride(name="value", column=@Column(name="BENEFIT_PERCENTAGE"))
 	private Percentage benefitPercentage;
 
 
