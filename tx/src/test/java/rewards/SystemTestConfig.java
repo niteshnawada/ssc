@@ -2,9 +2,11 @@ package rewards;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 import config.RewardsConfig;
@@ -29,6 +31,8 @@ public class SystemTestConfig {
 	}	
 	
 	
-	//	TODO-02: Define a bean named 'transactionManager' that configures a DataSourceTransactionManager 
-	
+	@Bean
+	public DataSourceTransactionManager transactionManager(){
+		return new DataSourceTransactionManager(dataSource());
+	}
 }
